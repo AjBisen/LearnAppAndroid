@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Quizappnew</string>
+    <string name="icon1">My Revision Plan</string>
+    <string name="icon2">My Active List</string>
+    <string name="icon3">My goal- NEET</string>
+    <string name="icon4">Extra Curricular</string>
+    <string name="icon5">All Goals</string>
+
+</resources>

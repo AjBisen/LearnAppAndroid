@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="200sp"
+                    android:layout_marginTop="-1dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/main_head_new"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+                <TextView
+                    android:id="@+id/headline"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="130dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Play to Learn"
+                    android:textColor="@color/head_col"
+                    android:textSize="28dp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/headline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/headline"
+                    app:tint="@color/green" />
+
+                <include
+                    android:id="@+id/backtool"
+                    layout="@layout/frag_back_head"></include>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="12sp"
+                   app:cardCornerRadius="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/headline"
+                    app:strokeColor="@color/green"
+                    app:strokeWidth="1dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@color/white"
+                        android:drawableRight="@drawable/ic_baseline_search_24"
+                        android:drawableTint="@color/green"
+                        android:hint="  Play"
+                        android:padding="10dp"
+                        android:textColorHint="@color/green"></EditText>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginBottom="130dp"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/search">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/playcard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardUseCompatPadding="true"
+                            app:strokeColor="@color/head_col"
+                            app:strokeWidth="0.5dp">
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="1dp"
+
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Learn These List"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_baseline_settings_24"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:tint="@color/head_col" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/allGoalsRV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                    app:spanCount="3"
+                                    tools:itemCount="6"
+                                    tools:listitem="@layout/item_play" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardUseCompatPadding="true"
+                                    app:strokeColor="@color/grey"
+                                    app:strokeWidth="0.5dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:drawableLeft="@drawable/ic_baseline_smart_display_24"
+                                        android:drawableTint="@color/red"
+                                        android:gravity="center"
+                                        android:paddingHorizontal="80dp"
+                                        android:paddingVertical="8dp"
+                                        android:text=" Play"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="20dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/chooseNew"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:cardCornerRadius="20dp"
+                                app:cardUseCompatPadding="true"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:strokeColor="@color/grey"
+                                app:strokeWidth="0.5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableLeft="@drawable/ic_baseline_groups_2_24"
+                                    android:drawableTint="@color/head_col"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="60dp"
+                                    android:paddingVertical="8dp"
+                                    android:text="   Choose New"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/shareapptext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="25dp"
+                            android:layout_marginTop="25dp"
+                            android:text="Share The App"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/share_app_dash1"></TextView>
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/share_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="8sp"
+                            app:cardCornerRadius="15dp"
+                            app:contentPadding="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/shareapptext"
+
+                            app:strokeColor="@color/head_col"
+                            app:strokeWidth="0.8dp">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/textHead1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:padding="10dp"
+                                            android:text="Share with friends"
+                                            android:textColor="@color/black"
+                                            android:textSize="15dp"
+                                            android:textStyle="bold">
+
+                                        </TextView>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:padding="10dp"
+                                            android:text="Help your Friends fell in love with learning through"
+                                            android:textSize="10dp">
+
+                                        </TextView>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1">
+
+                                    <ImageView
+                                        android:id="@+id/shareIMG1"
+                                        android:layout_width="150dp"
+                                        android:layout_height="100dp"
+                                        android:padding="10dp"
+                                        android:src="@drawable/share_app"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toRightOf="@id/textHead1"
+                                        app:layout_constraintRight_toRightOf="parent" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

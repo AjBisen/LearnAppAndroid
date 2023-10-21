@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.fragment.app.FragmentContainerView
+
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="-30dp"
+                android:isScrollContainer="true"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/app_navigaton_map" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--the usual bottom navigation bar with items-->
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+
+            app:fabCradleMargin="10dp"
+
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/head_col"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:fabAlignmentMode="center"
+            app:fabCradleRoundedCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/ic_baseline_home_24"
+                    android:id="@+id/wall_share"
+
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/green"></ImageView>
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/wall_stats"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_local_fire_department_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/green"></ImageView>
+
+                <TextView
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_baseline_home_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+
+                    android:visibility="invisible"
+                    app:backgroundTint="@color/green"></TextView>
+
+                <ImageView
+                    android:id="@+id/wall_blur"
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:src="@drawable/ic_baseline_subscriptions_24"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/green"></ImageView>
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_perm_media_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/green"></ImageView>
+
+            </LinearLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play"
+            app:tint="@color/white"
+            app:backgroundTint="@color/head_col"
+            app:layout_anchor="@id/bottomAppBar" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+
+

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      >
+
+        <com.google.android.material.card.MaterialCardView
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/headid"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="30dp"
+            app:cardBackgroundColor="@color/green_sel"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/categoryName"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pre-Primary"
+                android:textColor="@color/white"></TextView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardUseCompatPadding="true"
+
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/headid"
+                    app:strokeColor="@color/head_col"
+                    app:strokeWidth="0.5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="120dp"
+                            android:layout_height="100dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/login_bg"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:layout_marginLeft="8dp"
+                            android:id="@+id/headline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Kinder Garden"
+                            android:textColor="@color/head_col"
+                            android:textSize="16dp"
+                            app:layout_constraintLeft_toRightOf="@+id/img1"
+                            app:layout_constraintStart_toEndOf="@+id/img1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <LinearLayout
+
+                            android:id="@+id/linearLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/headline"
+                            app:layout_constraintTop_toBottomOf="@id/headline">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/categoryBTN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_weight="0.5"
+                                android:text="7 Categories"
+                                android:textColor="@color/white"
+                                android:textSize="10dp"
+                                app:backgroundTint="@color/head_col">
+
+
+                            </com.google.android.material.button.MaterialButton>
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="0dp"
+
+
+                                ></View>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/materialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_weight="0.5"
+                                android:text="20 Questions"
+                                android:textColor="@color/white"
+                                android:textSize="10dp"
+                                app:backgroundTint="@color/head_col">
+
+
+                            </com.google.android.material.button.MaterialButton>
+
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/icons_heart"
+                            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/head_col" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

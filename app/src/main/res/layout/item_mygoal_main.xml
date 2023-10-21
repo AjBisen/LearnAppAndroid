@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/mainimg"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+                android:src="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+               android:layout_marginBottom="8sp"
+                android:text="Capital Letter"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <ImageView
+
+                android:id="@+id/imagelike"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8sp"
+                android:src="@drawable/icons_heart"
+                app:layout_constraintBottom_toBottomOf="@+id/title"
+                app:layout_constraintEnd_toStartOf="@+id/materialCardView2"
+                app:layout_constraintTop_toTopOf="@+id/title"
+                app:tint="@color/white"></ImageView>
+
+            <com.google.android.material.card.MaterialCardView
+
+               android:layout_marginRight="8sp"
+                android:id="@+id/materialCardView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imagelike"
+                app:layout_constraintEnd_toEndOf="@+id/mainimg"
+                app:strokeColor="@color/head_col"
+                app:strokeWidth="0.5dp">
+
+                <ImageView
+                    android:id="@+id/sliderimg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/mythology"></ImageView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/mainimg"
+                app:layout_constraintStart_toStartOf="@+id/mainimg">
+
+                <TextView
+                    android:id="@+id/categBtn"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/text_bg"
+                    android:backgroundTint="@color/head_col"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:text="7 Categories"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"></TextView>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:id="@+id/materialButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/text_bg"
+                    android:backgroundTint="@color/head_col"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 Questions"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"></TextView>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
